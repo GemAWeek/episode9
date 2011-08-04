@@ -1,0 +1,35 @@
+<h2>Sign up</h2>
+<%= form_for @user, :html => {:class => 'horizontal_form half'} do |f| %>
+  <% if @user.errors.any? %>
+    <div class='error'>
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <ul>
+      <li>
+        <%= f.label :email  %>
+        <%= f.email_field :email, :class => 'requiredfield' %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => 'requiredfield' %>
+      </li>
+      <li>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation,
+                             :class => 'requiredfield' %>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <div>
+      <%= f.submit 'Submit', :class => 'confirm_button styled_button blue' %>
+    </div>
+  </fieldset>
+<% end %>

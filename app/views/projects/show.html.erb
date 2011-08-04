@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @project.name %>
+</h2>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user.email %>
+</p>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+<%= link_to 'Back', projects_path %>

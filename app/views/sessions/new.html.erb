@@ -1,0 +1,25 @@
+<h2>Log in</h2>
+<%= form_tag sessions_path, :class => 'horizontal_form half' do %>
+  <% if alert %>
+    <p class='error'><%= alert %></p>
+  <% end %>
+  <fieldset>
+    <ul>
+      <li>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, '', :class => 'requiredfield',
+                            :size => 30 %>
+      </li>
+      <li>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, '', :class => 'requiredfield',
+                               :size => 30 %>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <div>
+      <%= submit_tag 'Log in', :class => 'blue styled_button' %>
+    </div>
+  </fieldset>
+<% end %>
