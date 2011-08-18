@@ -8,6 +8,19 @@
   </head>
   <body>
     <div id='container'>
+      <div class='span-24'>
+      	<p>
+      	  <% if current_user %>
+        	  Logged in as <%= current_user.email %>
+        	  //
+        	  <%= link_to 'Projects', projects_path %>
+        	  //
+        	  <%= link_to 'Logout', logout_path %>
+          <% else %>
+            <%= link_to 'Login', login_path %>
+          <% end %>
+        </p>
+      </div>
       <% if notice %>
         <p class='success'><%= notice %></p>
       <% end %>
