@@ -6,8 +6,8 @@ gem 'bundler', '~> 1.0.15'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', :groups => [:development, :test]
-#gem 'pg', :group => :production
-gem 'mysql2'
+gem 'pg', :group => :production
+#gem 'mysql2'
 gem 'minitest', '~> 2.3.1', :group => :test
 
 gem 'json'
